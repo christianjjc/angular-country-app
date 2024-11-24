@@ -9,16 +9,14 @@ import { CountryI } from '../../interfaces/country.interface';
   styleUrl: './by-capital-page.component.css',
 })
 export class ByCapitalPageComponent {
-  constructor(private countriresService: CountriesService) {}
+  constructor(private countriesService: CountriesService) {}
 
   public countries: CountryI[] = [];
 
-  searchByCapital(term: string) {
-    if (!term || term.trim().length < 1) return;
-    // console.log('From ByCapitalPageComponent');
-    this.countriresService.searchCapital(term).subscribe((countries) => {
+  searchByCapital(capital: string) {
+    if (!capital || capital.trim().length < 1) return;
+    this.countriesService.searchCapital(capital).subscribe((countries) => {
       this.countries = countries;
     });
-    console.log({ term });
   }
 }
