@@ -1,5 +1,5 @@
 import { CountryI } from './country.interface';
-import { Region } from './region.type';
+import { RegionT } from './region.type';
 
 export interface CacheStoreI {
   byCapital: TermCountries;
@@ -13,6 +13,6 @@ export interface TermCountries {
 }
 
 export interface RegioCountries {
-  region?: Region;
+  region?: RegionT;
   countries: CountryI[];
 }

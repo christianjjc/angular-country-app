@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CountriesService } from '../../services/countries.service';
-import { CountryI } from '../../interfaces/country.interface';
+import { CountryI } from '../../interfaces';
 
 @Component({
   selector: 'app-by-capital-page',
@@ -18,7 +18,6 @@ export class ByCapitalPageComponent implements OnInit {
   ngOnInit(): void {
     this.countries = this.countriesService.cacheStore.byCapital.countries;
     this.initialValue = this.countriesService.cacheStore.byCapital.term;
-    // throw new Error('Method not implemented.');
   }
 
   searchByCapital(capital: string) {
