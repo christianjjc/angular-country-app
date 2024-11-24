@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { CountriesService } from '../../services/countries.service';
 import { CountryI } from '../../interfaces/country.interface';
 

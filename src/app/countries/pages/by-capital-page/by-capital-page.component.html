@@ -4,7 +4,8 @@
 
 <div class="row">
     <div class="col">
-        <shared-search-box (onValue)="searchByCapital($event)" placeHolder="Buscar por capital"></shared-search-box>
+        <!-- (onValue)="searchByCapital($event)" -->
+        <shared-search-box (onDeBounce)="searchByCapital($event)" placeHolder="Buscar por capital"></shared-search-box>
     </div>
 </div>
 
