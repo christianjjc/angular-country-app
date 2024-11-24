@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CountriesService } from '../../services/countries.service';
 import { CountryI } from '../../interfaces/country.interface';
 
@@ -8,11 +8,18 @@ import { CountryI } from '../../interfaces/country.interface';
   templateUrl: './by-capital-page.component.html',
   styleUrl: './by-capital-page.component.css',
 })
-export class ByCapitalPageComponent {
-  constructor(private countriesService: CountriesService) {}
-
+export class ByCapitalPageComponent implements OnInit {
   public countries: CountryI[] = [];
   public isLoading: boolean = false;
+  public initialValue: string = '';
+
+  constructor(private countriesService: CountriesService) {}
+
+  ngOnInit(): void {
+    this.countries = this.countriesService.cacheStore.byCapital.countries;
+    this.initialValue = this.countriesService.cacheStore.byCapital.term;
+    // throw new Error('Method not implemented.');
+  }
 
   searchByCapital(capital: string) {
     if (!capital || capital.trim().length < 1) return;
