@@ -8,9 +8,10 @@
   justify-content: center;
   padding: 5px 10px;
   position: fixed;
-  right: 15px;
+  right: 50px;
   top: 15px;
-  width: 150px;
+  width: 250px;
+  height: 100px;
   /* flex-direction: row-reverse; */
 }
 
